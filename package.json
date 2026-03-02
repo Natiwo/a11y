@@ -1,0 +1,38 @@
+{
+  "name": "@natiwo/a11y-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.7.1",
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "typecheck": "turbo run typecheck",
+    "check": "turbo run lint typecheck",
+    "knip": "knip",
+    "size": "turbo run size",
+    "audit:deps": "pnpm audit --audit-level moderate",
+    "audit:licenses": "license-checker-rseidelsohn --production --onlyAllow 'MIT;ISC;BSD-2-Clause;BSD-3-Clause;Apache-2.0;0BSD'",
+    "audit:secrets": "gitleaks detect --source . --verbose",
+    "prepare": "husky",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.0",
+    "@changesets/cli": "^2.29.0",
+    "@changesets/changelog-github": "^0.5.0",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "@size-limit/preset-small-lib": "^11.0.0",
+    "husky": "^9.0.0",
+    "knip": "^5.0.0",
+    "license-checker-rseidelsohn": "^4.4.0",
+    "size-limit": "^11.0.0",
+    "tsdown": "^0.12.0",
+    "turbo": "^2.5.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  }
+}
