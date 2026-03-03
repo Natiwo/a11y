@@ -1,21 +1,19 @@
 import type { KnipConfig } from "knip"
 
 const config: KnipConfig = {
+	ignoreBinaries: ["gitleaks"],
+	ignoreDependencies: ["@vitest/coverage-v8"],
 	workspaces: {
 		"packages/core": {
-			entry: ["src/index.ts"],
 			project: ["src/**/*.ts"],
 		},
 		"packages/react": {
-			entry: ["src/index.ts"],
 			project: ["src/**/*.ts"],
 		},
 		"packages/morpheus": {
-			entry: ["src/index.ts"],
 			project: ["src/**/*.ts"],
 		},
 	},
-	ignore: ["**/dist/**", "**/__tests__/**"],
 }
 
 export default config
