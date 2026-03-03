@@ -59,6 +59,12 @@ importers:
 
   packages/core: {}
 
+  packages/morpheus:
+    devDependencies:
+      '@natiwo/a11y':
+        specifier: workspace:*
+        version: link:../core
+
   packages/react:
     devDependencies:
       '@natiwo/a11y':
