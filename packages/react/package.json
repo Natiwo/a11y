@@ -1,0 +1,56 @@
+{
+	"name": "@natiwo/a11y-react",
+	"version": "0.1.0",
+	"description": "React hooks for @natiwo/a11y — accessibility and neurodiversity",
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": ["dist", "README.md", "LICENSE"],
+	"sideEffects": false,
+	"keywords": [
+		"a11y",
+		"accessibility",
+		"neurodiversity",
+		"react",
+		"hooks",
+		"wcag",
+		"color-blind",
+		"dyslexia"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/natiwo/a11y",
+		"directory": "packages/react"
+	},
+	"publishConfig": { "access": "public" },
+	"peerDependencies": {
+		"react": ">=18.0.0",
+		"@natiwo/a11y": ">=0.1.0"
+	},
+	"devDependencies": {
+		"@natiwo/a11y": "workspace:*",
+		"@testing-library/react": "^16.0.0",
+		"@types/react": "^19.0.0",
+		"@types/react-dom": "^19.0.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"test": "vitest run",
+		"lint": "biome check src/",
+		"format": "biome format --write src/",
+		"typecheck": "tsc --noEmit",
+		"size": "size-limit"
+	},
+	"size-limit": [{ "path": "dist/index.js", "limit": "1.5 kB" }]
+}
